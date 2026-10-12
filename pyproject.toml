@@ -4,7 +4,13 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.11.2",
+    "openai>=3.29.0",
+    "pandas>=3.0.6",
+    "python-dotenv>=1.2.4",
+    "torch>=2.14.1",
+]
 
 [project.scripts]
 wins-ai = "wins_ai:main"
