@@ -1,0 +1,477 @@
+[
+  {
+    "cve_id": "CVE-2021-44228",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-400",
+      "CWE-502",
+      "CWE-917"
+    ],
+    "cvss_score": 10.0,
+    "severity": "CRITICAL",
+    "published": "2021-12-10",
+    "description": "Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.",
+    "epss": 0.99999,
+    "epss_percentile": 1.0,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Apache",
+      "product": "Log4j2",
+      "name": "Apache Log4j2 Remote Code Execution Vulnerability",
+      "date_added": "2021-12-10",
+      "due_date": "2021-12-24",
+      "required_action": "For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.",
+      "short_description": "Apache Log4j2 contains a vulnerability where JNDI features do not protect against attacker-controlled JNDI-related endpoints, allowing for remote code execution.",
+      "ransomware": "Known"
+    },
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/10/1",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/10/2",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/M5CSVUNV4HWZZXGOKNSK6L7RPM7BOKIB/",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VU57UJDCFIASIO35GC55JMKSRXJMCDFM/",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://msrc-blog.microsoft.com/2021/12/11/microsofts-response-to-cve-2021-44228-apache-log4j2/",
+        "tags": [
+          "Patch",
+          "Third Party Advisory",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/10/1",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/10/2",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/M5CSVUNV4HWZZXGOKNSK6L7RPM7BOKIB/",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VU57UJDCFIASIO35GC55JMKSRXJMCDFM/",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://msrc-blog.microsoft.com/2021/12/11/microsofts-response-to-cve-2021-44228-apache-log4j2/",
+        "tags": [
+          "Patch",
+          "Third Party Advisory",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:34+00:00"
+  },
+  {
+    "cve_id": "CVE-2021-45046",
+    "cwe_ids": [
+      "CWE-917"
+    ],
+    "cvss_score": 9.0,
+    "severity": "CRITICAL",
+    "published": "2021-12-14",
+    "description": "It was found that the fix to address CVE-2021-44228 in Apache Log4j 2.15.0 was incomplete in certain non-default configurations. This could allows attackers with control over Thread Context Map (MDC) input data when the logging configuration uses a non-default Pattern Layout with either a Context Lookup (for example, $${ctx:loginId}) or a Thread Context Map pattern (%X, %mdc, or %MDC) to craft malicious input data using a JNDI Lookup pattern resulting in an information leak and remote code execution in some environments and local code execution in all environments. Log4j 2.16.0 (Java 8) and 2.12.2 (Java 7) fix this issue by removing support for message lookup patterns and disabling JNDI functionality by default.",
+    "epss": 0.99977,
+    "epss_percentile": 0.9998,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Apache",
+      "product": "Log4j2",
+      "name": "Apache Log4j2 Deserialization of Untrusted Data Vulnerability",
+      "date_added": "2023-05-01",
+      "due_date": "2023-05-22",
+      "required_action": "Apply updates per vendor instructions.",
+      "short_description": "Apache Log4j2 contains a deserialization of untrusted data vulnerability due to the incomplete fix of CVE-2021-44228, where the Thread Context Lookup Pattern is vulnerable to remote code execution in certain non-default configurations.",
+      "ransomware": "Known"
+    },
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/14/4",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/EOKPQGV24RRBBI4TBZUDQMM4MEH7MXCY/",
+        "tags": [
+          "Mailing List",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SIG7FZULMNK2XF6FZRU4VWYDQXNMUGAJ/",
+        "tags": [
+          "Mailing List",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "tags": [
+          "Mitigation",
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/14/4",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/EOKPQGV24RRBBI4TBZUDQMM4MEH7MXCY/",
+        "tags": [
+          "Mailing List",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SIG7FZULMNK2XF6FZRU4VWYDQXNMUGAJ/",
+        "tags": [
+          "Mailing List",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "tags": [
+          "Mitigation",
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:36+00:00"
+  },
+  {
+    "cve_id": "CVE-2022-22965",
+    "cwe_ids": [
+      "CWE-94"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2022-04-01",
+    "description": "A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it.",
+    "epss": 0.99638,
+    "epss_percentile": 0.99949,
+    "kev": {
+      "listed": true,
+      "vendor_project": "VMware",
+      "product": "Spring Framework",
+      "name": "Spring Framework JDK 9+ Remote Code Execution Vulnerability",
+      "date_added": "2022-04-04",
+      "due_date": "2022-04-25",
+      "required_action": "Apply updates per vendor instructions.",
+      "short_description": "Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://tanzu.vmware.com/security/cve-2022-22965",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://tanzu.vmware.com/security/cve-2022-22965",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:39+00:00"
+  },
+  {
+    "cve_id": "CVE-2017-5638",
+    "cwe_ids": [
+      "CWE-755"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2017-03-11",
+    "description": "The Jakarta Multipart parser in Apache Struts 2 2.3.x before 2.3.32 and 2.5.x before 2.5.10.1 has incorrect exception handling and error-message generation during file-upload attempts, which allows remote attackers to execute arbitrary commands via a crafted Content-Type, Content-Disposition, or Content-Length HTTP header, as exploited in the wild in March 2017 with a Content-Type header containing a #cmd= string.",
+    "epss": 0.99999,
+    "epss_percentile": 0.99994,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Apache",
+      "product": "Struts",
+      "name": "Apache Struts Remote Code Execution Vulnerability",
+      "date_added": "2021-11-03",
+      "due_date": "2022-05-03",
+      "required_action": "Apply updates per vendor instructions.",
+      "short_description": "Apache Struts Jakarta Multipart parser allows for malicious file upload using the Content-Type value, leading to remote code execution.",
+      "ransomware": "Known"
+    },
+    "references": [
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cwiki.apache.org/confluence/display/WW/S2-045",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://cwiki.apache.org/confluence/display/WW/S2-046",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-045.html",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-046.html",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cwiki.apache.org/confluence/display/WW/S2-045",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://cwiki.apache.org/confluence/display/WW/S2-046",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-045.html",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-046.html",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:42+00:00"
+  },
+  {
+    "cve_id": "CVE-2014-6271",
+    "cwe_ids": [
+      "CWE-78"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2014-09-24",
+    "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgid modules in the Apache HTTP Server, scripts executed by unspecified DHCP clients, and other situations in which setting the environment occurs across a privilege boundary from Bash execution, aka \"ShellShock.\"  NOTE: the original fix for this issue was incorrect; CVE-2014-7169 has been assigned to cover the vulnerability that is still present after the incorrect fix.",
+    "epss": 0.99999,
+    "epss_percentile": 0.99993,
+    "kev": {
+      "listed": true,
+      "vendor_project": "GNU",
+      "product": "Bourne-Again Shell (Bash)",
+      "name": "GNU Bourne-Again Shell (Bash) Arbitrary Code Execution Vulnerability",
+      "date_added": "2022-01-28",
+      "due_date": "2022-07-28",
+      "required_action": "Apply updates per vendor instructions.",
+      "short_description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute code.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "http://jvn.jp/en/jp/JVN55667175/index.html",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597",
+        "tags": [
+          "Issue Tracking",
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://jvn.jp/en/jp/JVN55667175/index.html",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597",
+        "tags": [
+          "Issue Tracking",
+          "Patch"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:45+00:00"
+  }
+]

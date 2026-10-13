@@ -1,0 +1,55 @@
+[
+  {
+    "cve_id": "CVE-2021-44228",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-400",
+      "CWE-502",
+      "CWE-917"
+    ],
+    "product": "siemens 6bk1602-0aa12-0tp0 firmware",
+    "cvss_score": 10.0,
+    "severity": "CRITICAL",
+    "published": "2021-12-10T10:15:09.143"
+  },
+  {
+    "cve_id": "CVE-2014-6271",
+    "cwe_ids": [
+      "CWE-78"
+    ],
+    "product": "gnu bash",
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2014-09-24T18:48:04.477"
+  },
+  {
+    "cve_id": "CVE-2016-2386",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "product": "sap netweaver application server java 7.40",
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2016-02-16T15:59:00.133"
+  },
+  {
+    "cve_id": "CVE-2014-0160",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "product": "openssl openssl",
+    "cvss_score": 7.5,
+    "severity": "HIGH",
+    "published": "2014-04-07T22:55:03.893"
+  },
+  {
+    "cve_id": "CVE-2019-0708",
+    "cwe_ids": [
+      "CWE-416"
+    ],
+    "product": "microsoft windows 7",
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2019-05-16T19:29:00.427"
+  }
+]
